@@ -1,0 +1,34 @@
+{
+  "name": "puamb-api",
+  "version": "1.0.0",
+  "description": "the backend for the puamb fitness tracking site",
+  "main": "index.js",
+  "author": "Bill Spooner",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "@types/node": "^13.11.1",
+    "serverless": "^1.67.3",
+    "serverless-plugin-typescript": "^1.1.9",
+    "serverless-pseudo-parameters": "^2.5.0",
+    "typescript": "^3.8.3"
+  },
+  "dependencies": {
+    "@types/graphql": "^14.5.0",
+    "apollo-server-lambda": "^2.12.0",
+    "graphql": "^14.1.1",
+    "mysql": "^2.18.1",
+    "reflect-metadata": "^0.1.13",
+    "serverless-mysql": "^1.5.4",
+    "type-graphql": "^0.17.6",
+    "typedi": "^0.8.0",
+    "typeorm": "^0.2.24",
+    "typeorm-encrypted": "^0.5.4",
+    "typeorm-typedi-extensions": "^0.2.3"
+  },
+  "scripts": {
+    "start": "ts-node ../src/index.ts",
+    "deploy": "sls deploy",
+    "rawSQL": "./rawSQL.sh"
+  }
+}

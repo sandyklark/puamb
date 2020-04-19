@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "preserveConstEnums": true,
+    "strictNullChecks": true,
+    "esModuleInterop": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "sourceMap": true,
+    "allowJs": true,
+    "target": "es2016",
+    "outDir": ".build",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "lib": ["es6", "es2016", "esnext.asynciterable"],
+    "rootDir": "./"
+  }
+}

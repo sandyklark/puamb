@@ -1,0 +1,6 @@
+.idea/
+.vscode/
+packages/api/node_modules/
+build/
+tmp/
+temp/

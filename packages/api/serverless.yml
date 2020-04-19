@@ -1,0 +1,74 @@
+service: ${file(./secrets.json):ApiName}
+
+provider:
+  name: aws
+  region: eu-west-1
+  stage: dev
+  memorySize: 256
+  runtime: nodejs12.x
+  role: LambdaRole
+  environment:
+    #typeorm
+    ENCRYPTION_KEY: ${self:custom.ENCRYPTION_KEY}
+    #mysql
+    MYSQL_HOST: ${self:custom.MYSQL.HOST}
+    MYSQL_PORT: ${self:custom.MYSQL.PORT}
+    #common
+    DB_NAME: ${self:custom.DB_NAME}
+    USERNAME: ${self:custom.USERNAME}
+    PASSWORD: ${self:custom.PASSWORD}
+custom:
+  ENCRYPTION_KEY: ${file(./secrets.json):EncryptionKey}
+  DB_NAME: graphql
+  USERNAME: master
+  PASSWORD: ${file(./secrets.json):DbPassword}
+  MYSQL:
+    HOST:
+      Fn::GetAtt: [MySqlRDSInstance, Endpoint.Address]
+    PORT:
+      Fn::GetAtt: [MySqlRDSInstance, Endpoint.Port]
+    VPC_CIDR: 10
+
+plugins:
+  - serverless-pseudo-parameters
+  - serverless-plugin-typescript
+resources:
+  Resources:
+    LambdaRole: ${file(./resource/LambdaRole.yml)}
+    ServerlessInternetGateway: ${file(./resource/ServerlessInternetGateway.yml)}
+    ServerlessVPC: ${file(./resource/ServerlessVPC.yml)}
+    ServerlessVPCGA: ${file(./resource/ServerlessVPCGA.yml)}
+    ServerlessSubnetA: ${file(./resource/ServerlessSubnetA.yml)}
+    ServerlessSubnetB: ${file(./resource/ServerlessSubnetB.yml)}
+    ServerlessSubnetC: ${file(./resource/ServerlessSubnetC.yml)}
+    ServerlessSubnetGroup: ${file(./resource/ServerlessSubnetGroup.yml)}
+    ServerlessSecurityGroup: ${file(./resource/ServerlessSecurityGroup.yml)}
+    RouteTablePublic: ${file(./resource/RouteTablePublic.yml)}
+    RoutePublic: ${file(./resource/RoutePublic.yml)}
+    RouteTableAssociationSubnetA: ${file(./resource/RouteTableAssociationSubnetA.yml)}
+    RouteTableAssociationSubnetB: ${file(./resource/RouteTableAssociationSubnetB.yml)}
+    RouteTableAssociationSubnetC: ${file(./resource/RouteTableAssociationSubnetC.yml)}
+
+    MySqlRDSInstance: ${file(./resource/MySqlRDSInstance.yml)}
+
+package:
+  include:
+    - schema.gql
+
+functions:
+  graphql:
+    handler: src/index.handler
+    events:
+      - http:
+          path: graphql
+          method: post
+          cors: true
+  playground:
+    handler: src/index.handler
+    events:
+    - http:
+        path: graphql
+        method: get
+        cors: true
+  rawSQL:
+    handler: src/rawSQL.handler

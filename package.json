@@ -1,0 +1,10 @@
+{
+  "name": "puamb",
+  "version": "1.0.0",
+  "description": "a monorepo for the puamb fitness tracker",
+  "main": "index.js",
+  "author": "Bill Spooner",
+  "license": "MIT",
+  "workspaces": "packages/*",
+  "private": true
+}

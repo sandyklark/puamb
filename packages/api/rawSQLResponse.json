@@ -1,0 +1,20 @@
+{
+  "results": [
+    {
+      "id": 1,
+      "name": "G",
+      "email": "sdffsd@esdfgh.com",
+      "password": "qJ4ZzeXR9LvwgtgOJ8JKkTffvfU2aG3qX/uc61w5r+U=",
+      "points": 0,
+      "groupId": ""
+    },
+    {
+      "id": 2,
+      "name": "Gds",
+      "email": "sdffsd@esdsdfgh.com",
+      "password": "qJ4ZzeXR9LvwgtgOJ8JKkTffvfU2aG3qX/uc61w5r+U=",
+      "points": 0,
+      "groupId": ""
+    }
+  ]
+}
