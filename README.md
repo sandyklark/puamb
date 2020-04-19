@@ -1,10 +1,11 @@
+
 # PUAMB
 
 ## General
 
 #### Overview
 
-> A fitness tracker service comprised of a React (Typescript) frontend served by a GraphQl API and database
+A fitness tracker service comprised of a React (Typescript) frontend served by a GraphQl API and database
 
 #### Tasks
 
@@ -16,13 +17,9 @@
 
 ## API
 
-#### Overview
+#### Overview
 
-
-> A Lambda based GraphQL server connected to a mysql database.
-> Using Typescript classes to generate both GraphQL schemas and TypeORM entities.
-> Generated schemas will be used to initialize an `apollo-server` graphql server which will use 
-> `typeorm` for the functions in its resolvers.
+A Lambda based GraphQL server connected to a mysql database.  Using Typescript classes to generate both GraphQL schemas and TypeORM entities.  Generated schemas will be used to initialize an `apollo-server` graphql server which will use `typeorm` for the functions in its resolvers.
 
 
 #### Tasks
@@ -40,7 +37,8 @@
 - [X] Create `apollo-server` lambda handler
 - [X] Create CLI triggered lambda to execute raw SQL
 - [X] Stop losing data in db
-- [ ] Add CRUD resolvers for basic schema objects
+- [X] Add CRUD resolvers for basic schema objects
+- [ ] Add Entity relationships
 - [ ] Add Authentication
 - [ ] Add Authorization via `typeorm` auth decorators and apollo context
 
@@ -50,11 +48,15 @@
 
 #### Overview
 
-> A `react` website communicating with the backend via `graphql`
+A `react` website communicating with the backend via `graphql`
 
 #### Tasks
 
-- [ ] generate site with `create-react-app` with Typescript flag
-- [ ] add `react-router` 
-- [ ] add `redux-toolkit`
-- [ ] build the fucking site
+- [ ] Generate site with `create-react-app` with Typescript flag
+- [ ] Create site structure
+    - [ ] Decide on and create folder structure
+    - [ ] Wireframe layouts
+- [ ] Integrate `react-router` for navigation
+- [ ] Integrate `redux-toolkit`for store and async actions
+    - [ ] Create stores for pages
+    - [ ] Create GraphQL thunks

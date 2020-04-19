@@ -3,12 +3,14 @@ import 'reflect-metadata';
 import {createConnection, getConnectionManager, useContainer} from 'typeorm';
 import {Container} from 'typedi';
 import {buildSchema} from 'type-graphql';
-import {ApolloServer, gql} from "apollo-server-lambda";
+import {ApolloServer} from "apollo-server-lambda";
 
-import {User} from './entities/User';
 import {Post} from './entities/Post';
+import {User} from './entities/User';
 import {Group} from './entities/Group';
-import {UserResolver} from './resolvers/user-resolver';
+import {UserResolver} from './resolvers/UserResolver';
+import {PostResolver} from "./resolvers/PostResolver";
+import {GroupResolver} from "./resolvers/GroupResolver";
 
 export interface Context {
     user: User;
@@ -40,13 +42,17 @@ const createHandler = async () => {
             synchronize: true,
             logger: 'advanced-console',
             logging: 'all',
-            // dropSchema: true, // this makes everything go bye bye when connection ends
+            dropSchema: true, // this makes everything go bye bye when connection ends
             cache: true
         });
     }
 
     const schema = await buildSchema({
-        resolvers: [UserResolver],
+        resolvers: [
+            UserResolver,
+            PostResolver,
+            GroupResolver
+        ],
         container: Container
     });
 

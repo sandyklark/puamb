@@ -7,7 +7,7 @@ export class Post {
 
     @Field(type => ID)
     @PrimaryGeneratedColumn()
-    id: number;
+    id: string;
 
     @Field(type => Int)
     @Column()

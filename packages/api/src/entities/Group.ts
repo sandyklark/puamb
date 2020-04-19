@@ -9,7 +9,7 @@ export class Group {
 
     @Field(type => ID)
     @PrimaryGeneratedColumn()
-    id: number;
+    id: string;
 
     @Field()
     @Column()

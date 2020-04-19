@@ -1,5 +1,6 @@
 .idea/
 .vscode/
+.serverless/
 packages/api/node_modules/
 build/
 tmp/
