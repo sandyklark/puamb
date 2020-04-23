@@ -57,7 +57,12 @@ const createHandler = async () => {
     });
 
     const server = new ApolloServer({schema});
-    return server.createHandler();
+    return server.createHandler({
+        cors: {
+            origin: '*',
+            credentials: true,
+        }
+    });
 };
 
 export const handler = (event, context, callback) => {
