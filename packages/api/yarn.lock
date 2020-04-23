@@ -5147,10 +5147,10 @@ serverless-mysql@^1.5.4:
   optionalDependencies:
     "@types/mysql" "^2.15.6"
 
-serverless-plugin-typescript@^1.1.9:
-  version "1.1.9"
-  resolved "https://registry.yarnpkg.com/serverless-plugin-typescript/-/serverless-plugin-typescript-1.1.9.tgz#75348a93f3f5dae19aad7006d51a545618892028"
-  integrity sha512-OmZrD1uArNx+1MPrXck39zsa76k/H7QYOOAg/Uz9xpLGJPUsvW0pXRSE9NN7LRid6IuM/WpY3VWkD5DPusY4cA==
+serverless-plugin-typescript@1.1.7:
+  version "1.1.7"
+  resolved "https://registry.yarnpkg.com/serverless-plugin-typescript/-/serverless-plugin-typescript-1.1.7.tgz#a26bee076bf9b091c3be0e0fef17de551bf58079"
+  integrity sha512-5kBas1x2elOwc4Ov2vhxBv0gffUQALOGVNmsIrCjPx7qQ93SPD8rccyQDrNVMWMAj4ziFH/dr5UcW+53V/N4Tw==
   dependencies:
     fs-extra "^7.0.1"
     globby "^9.2.0"

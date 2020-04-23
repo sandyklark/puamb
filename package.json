@@ -5,6 +5,14 @@
   "main": "index.js",
   "author": "Bill Spooner",
   "license": "MIT",
-  "workspaces": "packages/*",
+  "workspaces": [
+    "packages/*"
+  ],
+  "nohoist": [
+    "*/*"
+  ],
+  "scripts": {
+    "start:site": "yarn workspace puamb-site start"
+  },
   "private": true
 }

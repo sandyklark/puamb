@@ -56,11 +56,16 @@ const createHandler = async () => {
         container: Container
     });
 
-    const server = new ApolloServer({schema});
+    const server = new ApolloServer({
+      schema,
+      playground: {
+        endpoint: "/dev/graphql"
+      }
+    });
     return server.createHandler({
         cors: {
             origin: '*',
-            credentials: true,
+            credentials: true
         }
     });
 };

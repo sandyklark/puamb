@@ -15,6 +15,19 @@ A fitness tracker service comprised of a React (Typescript) frontend served by a
 
 ---
 
+## VPC
+
+#### Overview
+
+A Foundational stack for VPC and other related resources
+
+#### Tasks
+
+- [ ] Create VPC via CDK (look at masterchef for configuration)
+- [ ] 
+
+---
+
 ## API
 
 #### Overview
@@ -39,6 +52,8 @@ A Lambda based GraphQL server connected to a mysql database.  Using Typescript c
 - [X] Stop losing data in db
 - [X] Add CRUD resolvers for basic schema objects
 - [ ] Add Entity relationships
+- [ ] Create a separate package for VPC stack
+- [ ] Put lambdas and database in separate subnets + security groups
 - [ ] Add Authentication
 - [ ] Add Authorization via `typeorm` auth decorators and apollo context
 
@@ -52,11 +67,11 @@ A `react` website communicating with the backend via `graphql`
 
 #### Tasks
 
-- [ ] Generate site with `create-react-app` with Typescript flag
+- [X] Generate site with `create-react-app` with Typescript flag
+- [X] Test basic connection with `@apollo/client`
 - [ ] Create site structure
     - [ ] Decide on and create folder structure
     - [ ] Wireframe layouts
 - [ ] Integrate `react-router` for navigation
 - [ ] Integrate `redux-toolkit`for store and async actions
     - [ ] Create stores for pages
-    - [ ] Create GraphQL thunks
