@@ -2,10 +2,12 @@ import React from "react";
 import ImportContactsIcon from '@material-ui/icons/ImportContacts';
 import GroupIcon from '@material-ui/icons/Group';
 import BarChartIcon from '@material-ui/icons/BarChart';
+import ListIcon from '@material-ui/icons/List';
 
 import {Profile} from "./profile";
 import {Group} from "./group";
 import {Stats} from "./stats";
+import {Posts} from "./posts";
 
 export type PageConfig = {
   id: string;
@@ -29,6 +31,13 @@ export const pages: PageConfig[] = [
     icon: GroupIcon,
     title: 'Group',
     path: '/group'
+  },
+  {
+    id: 'posts',
+    component: Posts,
+    icon: ListIcon,
+    title: 'Posts',
+    path: '/posts'
   },
   {
     id: 'stats',

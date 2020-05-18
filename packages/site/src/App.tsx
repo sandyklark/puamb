@@ -12,7 +12,6 @@ import {pages} from "./pages/pages";
 import {Header} from "./components/Header";
 
 
-
 const client = new ApolloClient({
   cache: new InMemoryCache(),
   link: new HttpLink({
@@ -22,8 +21,8 @@ const client = new ApolloClient({
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
-    root: {
-      flexGrow: 1
+    container: {
+      width: '100%'
     }
   }),
 );
@@ -41,21 +40,19 @@ function App() {
 
   return (
     <BrowserRouter>
-      <div className={css.root}>
-        <Header/>
-        <Grid container direction={'column'} justify={'center'} alignItems={'center'} spacing={3}>
-          <Grid md={10} item>
-            <Navigation />
-          </Grid>
-
-          <Grid md={12} item>
-            <Switch>
-              <Route exact path="/" component={Home}/>
-              {renderRoutes()}
-            </Switch>
-          </Grid>
+      <Header/>
+      <Grid className={css.container} container direction={'column'} justify={'center'} alignItems={'center'} spacing={3}>
+        <Grid item>
+          <Navigation />
         </Grid>
-      </div>
+
+        <Grid item>
+          <Switch>
+            <Route exact path="/" component={Home}/>
+            {renderRoutes()}
+          </Switch>
+        </Grid>
+      </Grid>
     </BrowserRouter>
   );
 }

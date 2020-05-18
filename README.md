@@ -24,7 +24,6 @@ A Foundational stack for VPC and other related resources
 #### Tasks
 
 - [ ] Create VPC via CDK (look at masterchef for configuration)
-- [ ] 
 
 ---
 
@@ -51,11 +50,11 @@ A Lambda based GraphQL server connected to a mysql database.  Using Typescript c
 - [X] Create CLI triggered lambda to execute raw SQL
 - [X] Stop losing data in db
 - [X] Add CRUD resolvers for basic schema objects
+- [ ] Add Authentication (Cognito)
+- [ ] Add Authorization via `typeorm` auth decorators and apollo context
 - [ ] Add Entity relationships
 - [ ] Create a separate package for VPC stack
 - [ ] Put lambdas and database in separate subnets + security groups
-- [ ] Add Authentication
-- [ ] Add Authorization via `typeorm` auth decorators and apollo context
 
 ---
 
@@ -69,9 +68,11 @@ A `react` website communicating with the backend via `graphql`
 
 - [X] Generate site with `create-react-app` with Typescript flag
 - [X] Test basic connection with `@apollo/client`
+- [X] Integrate `react-router` for navigation
 - [ ] Create site structure
-    - [ ] Decide on and create folder structure
-    - [ ] Wireframe layouts
-- [ ] Integrate `react-router` for navigation
+    - [X] Decide on and create basic folder structure
+    - [X] Add core pages
+- [ ] Integrate Cognito login
+- [ ] Get access to specific user data via cognito credentials
 - [ ] Integrate `redux-toolkit`for store and async actions
     - [ ] Create stores for pages
